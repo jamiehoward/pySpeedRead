@@ -13,6 +13,7 @@ def isVowel(letter):
 		return False
 
 def spritzText(text, speed, highlight):
+	timeStarted = time.time()
 	splitText = re.findall(r"[\w']+",text)
 	wordCount = 0
 	for word in splitText:
@@ -35,6 +36,7 @@ def spritzText(text, speed, highlight):
 		print "┌──────────┬──────────┐"
 		print spacer + "".join(formattedWord)
 		print "└──────────┴──────────┘"
+		print "Time elapsed: " + str(round(time.time()-timeStarted)) +"s"
 		if (wordCount == 0):
 			time.sleep(1.5)
 		else:
